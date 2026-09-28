@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cameo's Boutique &amp; Home Decor</title>
+<meta name="description" content="Cameo's Boutique &amp; Home Decor — women's clothing, accessories and home decor. Call or message us on Facebook to order.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2f86cc; --blue-deep:#1d5f9c; --navy:#12365a; --pale:#e4f0fa; --mist:#f3f8fd;
+  --cream:#f7f3e8; --gold:#b8934a; --gold-light:#e3cf9c; --ink:#1c2733; --sub:#5a6675;
+  --line:#dfe6ee; --sale:#c2453d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:'Nunito Sans',Arial,sans-serif;font-size:16px;line-height:1.55}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;margin:0}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0;padding:0}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+button:disabled{opacity:.45;cursor:not-allowed}
+[hidden]{display:none!important}
+svg.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.script{font-family:'Great Vibes',cursive;font-weight:400}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:4px;padding:14px 28px;font-weight:700;font-size:15px;border:1.5px solid transparent;transition:background .2s,color .2s,border-color .2s,transform .15s}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.navy:hover{background:#0d2a47}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.primary:hover{background:var(--blue-deep)}
+.btn.outline{border-color:var(--navy);color:var(--navy)}
+.btn.outline:hover{background:var(--navy);color:#fff}
+.btn.light{border-color:#fff;color:#fff}
+.btn.light:hover{background:#fff;color:var(--navy)}
+
+/* promo */
+.promo{display:flex;justify-content:center;align-items:center;gap:8px;width:100%;background:var(--pale);border-bottom:1px solid #cfe1f1;font-weight:700;font-size:14px;padding:14px 16px;color:var(--navy)}
+.promo:hover{background:#d8e9f7}
+
+/* header */
+header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
+.hrow{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;padding:12px 40px 8px}
+.hleft,.hright{display:flex;align-items:center;gap:8px}
+.hright{justify-content:flex-end}
+.ibtn{position:relative;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;color:var(--navy);transition:background .2s}
+.ibtn:hover{background:var(--pale)}
+.ibtn.phone{display:flex;align-items:center;justify-content:center;width:auto;padding:0 14px 0 12px;gap:8px;border-radius:22px}
+.ibtn.phone .pn{font-weight:700;font-size:14.5px;white-space:nowrap}
+.ibtn .badge{position:absolute;top:3px;right:2px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--blue);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center}
+.burger{display:none}
+.logo{display:flex;flex-direction:column;align-items:center;line-height:1}
+.logo .l1{display:flex;align-items:center;gap:6px}
+.logo .script{font-size:56px;color:var(--ink);line-height:1.05;transition:font-size .3s}
+.logo .tag{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:19px;color:var(--navy);margin-top:-6px;max-height:30px;overflow:hidden;transition:max-height .3s,opacity .3s,margin .3s}
+header.compact .logo .script{font-size:38px}
+header.compact .logo .tag{max-height:0;opacity:0;margin-top:0}
+nav.main{display:flex;justify-content:center;gap:2px;padding:0 20px 6px}
+.ni{position:relative}
+.ni>button{display:flex;align-items:center;gap:6px;padding:11px 14px;font-size:15px;color:var(--ink);border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.ni>button:hover,.ni:focus-within>button,.ni.on>button{color:var(--blue-deep);border-color:var(--blue)}
+.ni .chev{width:11px;height:11px;stroke-width:2}
+.dd{position:absolute;top:100%;left:50%;min-width:220px;background:#fff;border:1px solid var(--line);box-shadow:0 20px 40px -20px rgba(18,54,90,.4);padding:10px 0;opacity:0;visibility:hidden;transform:translate(-50%,6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:5}
+.ni:hover .dd,.ni:focus-within .dd{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.dd button{display:block;width:100%;text-align:left;padding:9px 24px;font-size:14.5px;color:var(--ink)}
+.dd button:hover{background:var(--mist);color:var(--blue-deep)}
+
+/* hero */
+.hero{position:relative;padding:84px 24px;background:repeating-linear-gradient(90deg,#e8f0f8 0 12px,#f6f9fc 12px 24px);border-bottom:1px solid #d3e2f0}
+.hero.photo{background:center/cover no-repeat}
+.hero-card{position:relative;max-width:660px;margin:0 auto;background:#fff;border:1px solid #b9cfe4;padding:60px 56px 54px;text-align:center}
+.hero-card::before{content:'';position:absolute;inset:9px;border:1px solid #dbe7f2;pointer-events:none}
+.hero-card .kick{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:22px;color:var(--blue-deep)}
+.hero-card h1{font-size:clamp(2.5rem,5.4vw,3.9rem);line-height:1.06;color:var(--navy);margin:8px 0 16px;font-weight:600}
+.hero-card p{color:#465666;max-width:40ch;margin:0 auto 28px;font-size:17px}
+.hero-card .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* section heads */
+.section{padding:84px 0}
+.shead{text-align:center;margin-bottom:44px}
+.shead h2{font-size:clamp(2.1rem,4vw,3rem);color:var(--navy)}
+.shead p{color:var(--sub);margin:12px auto 0;max-width:52ch}
+.rule{display:block;width:56px;height:2px;background:var(--gold);margin:14px auto 0}
+
+/* category circles */
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+.cat{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.cat .ring{display:block;width:100%;max-width:170px;aspect-ratio:1;border-radius:50%;background:#eaf2fa;border:1px solid #cfe0ef;overflow:hidden;transition:border-color .2s}
+.cat .ring img{width:100%;height:100%;object-fit:cover}
+.cat:hover .ring{border-color:var(--blue)}
+.cat:hover span:last-child{color:var(--blue-deep)}
+.cat span{font-weight:700;font-size:15px;color:var(--navy)}
+
+/* shop */
+.shop{background:var(--mist);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#shop{scroll-margin-top:112px}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.toolbar .count{color:var(--sub);font-size:14.5px}
+.toolbar .count button{color:var(--blue-deep);font-weight:700;text-decoration:underline;margin-left:10px}
+.sortsel{background:#fff;border:1.5px solid var(--line);border-radius:4px;padding:9px 12px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px 24px}
+.card{display:flex;flex-direction:column}
+.media{position:relative;background:#eaf2fa;border:1px solid #d3e2f0;border-radius:4px;overflow:hidden;aspect-ratio:4/5}
+.media .art{display:block;width:100%;height:100%}
+.media .art img{width:100%;height:100%;object-fit:cover}
+.chips{position:absolute;top:12px;left:12px;display:flex;gap:6px}
+.chip{background:var(--blue);color:#fff;font-size:11.5px;font-weight:700;padding:4px 11px;border-radius:99px}
+.chip.sale{background:var(--sale)}
+.card h3{font-family:'Nunito Sans',sans-serif;font-weight:600;font-size:15.5px;margin:14px 0 2px;color:var(--ink)}
+.card .sub{font-size:13px;color:var(--sub)}
+.card .pr{font-weight:700;margin:4px 0 12px}
+.card .pr s{color:var(--sub);font-weight:400;margin-left:8px}
+.card .pr .now{color:var(--ink)}
+.card .pr .now.sale{color:var(--sale)}
+.card .add{margin-top:auto;width:100%;border:1.5px solid var(--navy);border-radius:4px;padding:11px;font-weight:700;font-size:14px;color:var(--navy);transition:background .2s,color .2s}
+.card .add:hover{background:var(--navy);color:#fff}
+.empty{grid-column:1/-1;text-align:center;color:var(--sub);padding:50px 0}
+.card.blank .media{background:#eef4fa}
+.phline{height:11px;border-radius:6px;background:#dde9f4;margin-top:16px}
+.phline.m{width:72%}
+.phline.s{width:38%;height:10px;margin-top:10px}
+
+/* home decor band */
+.band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.band-art{background:#eaf2fa;border:1px solid #d3e2f0;border-radius:4px;min-height:380px;overflow:hidden}
+.band-art img{width:100%;height:100%;object-fit:cover}
+.band h2{font-size:clamp(2rem,3.6vw,2.8rem);color:var(--navy);margin-bottom:14px}
+.band p{color:var(--sub);max-width:46ch;margin:0 0 26px}
+
+/* visit */
+.visit{background:var(--navy);color:#fff;text-align:center}
+.visit h2{font-size:clamp(2.1rem,4vw,3rem);color:#fff}
+.visit .lead{color:#c8d9ea;max-width:52ch;margin:14px auto 40px}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:920px;margin:0 auto}
+.vcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:30px 20px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.vcard .ic{width:28px;height:28px;color:var(--gold-light)}
+.vcard h3{font-family:'Nunito Sans',sans-serif;font-size:15px;font-weight:700;letter-spacing:.02em}
+.vcard .v{font-weight:700;font-size:16px}
+.vcard a.v:hover{color:var(--gold-light)}
+.vcard .s{color:#c8d9ea;font-size:14px}
+.vbtn{margin-top:12px;border:1.5px solid rgba(255,255,255,.55);color:#fff;border-radius:4px;padding:10px 20px;font-weight:700;font-size:14px;transition:background .2s,color .2s,border-color .2s}
+.vbtn:hover{background:#fff;color:var(--navy);border-color:#fff}
+
+/* footer */
+footer{background:#0d2740;color:#c8d9ea;padding:60px 0 28px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer .logo{align-items:flex-start}
+footer .logo .script{color:#fff;font-size:48px}
+footer .logo .tag{color:var(--gold-light)}
+footer .about{font-size:14px;line-height:1.7;margin:16px 0 0;max-width:34ch}
+.fcol h4{font-family:'Nunito Sans',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin:0 0 16px;font-weight:700}
+.fcol a,.fcol button,.fcol span{display:block;font-size:14.5px;margin-bottom:11px;color:#c8d9ea;text-align:left}
+.fcol a:hover,.fcol button:hover{color:#fff}
+.fbottom{margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:#8fa9c4}
+
+/* layers: drawers, modals, search */
+.scrim{position:fixed;inset:0;background:rgba(13,39,64,.5);z-index:60;opacity:0;pointer-events:none;transition:opacity .3s}
+body[data-layer] .scrim{opacity:1;pointer-events:auto}
+body[data-layer]{overflow:hidden}
+.panel{position:fixed;top:0;bottom:0;z-index:70;background:#fff;display:flex;flex-direction:column;padding:24px 26px;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.panel.r{right:0;width:min(440px,100%);transform:translateX(100%)}
+.panel.l{left:0;width:min(340px,100%);transform:translateX(-100%)}
+body[data-layer="bag"] #bagPanel,body[data-layer="menu"] #menuPanel{transform:none}
+.ph{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+.ph h2{font-size:1.9rem;color:var(--navy)}
+.xbtn{width:40px;height:40px;display:grid;place-items:center;border-radius:50%;color:var(--navy)}
+.xbtn:hover{background:var(--pale)}
+
+#bagList{list-style:none;margin:0;padding:0;flex:1;overflow:auto}
+#bagList li{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.bthumb{width:72px;height:88px;flex-shrink:0;border-radius:6px;background:#eaf2fa;display:grid;place-items:center;overflow:hidden}
+.bthumb svg{width:70%;height:70%}
+.bthumb img{width:100%;height:100%;object-fit:cover}
+.binfo{flex:1;font-size:14.5px}
+.binfo .n{font-weight:700}
+.binfo .v{color:var(--sub);font-size:13px}
+.qty{display:flex;align-items:center;gap:12px;margin-top:8px}
+.qty button.qb{width:28px;height:28px;border:1.5px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:16px;line-height:1}
+.qty button.qb:hover{border-color:var(--navy)}
+.qty .rm{font-size:13px;color:var(--sub);text-decoration:underline;margin-left:8px}
+.bprice{font-weight:700;font-size:15px}
+.bempty{color:var(--sub);text-align:center;padding:40px 0;border:0!important}
+.sub-row{display:flex;justify-content:space-between;font-weight:700;font-size:17px;padding:16px 0 4px}
+.tiny{font-size:12.5px;color:var(--sub);margin:0 0 14px}
+
+.modal{position:fixed;inset:0;z-index:70;display:grid;place-items:center;padding:22px;opacity:0;pointer-events:none;transition:opacity .3s}
+body[data-layer="quick"] #quickModal,body[data-layer="checkout"] #checkoutModal{opacity:1;pointer-events:auto}
+.mbox{position:relative;background:#fff;border-radius:8px;width:min(880px,100%);max-height:92vh;overflow:auto;transform:translateY(14px);transition:transform .35s}
+body[data-layer="quick"] #quickModal .mbox,body[data-layer="checkout"] #checkoutModal .mbox{transform:none}
+.mclose{position:absolute;top:12px;right:12px;z-index:2}
+.qgrid{display:grid;grid-template-columns:1fr 1fr}
+.qart{background:#eaf2fa;display:grid;place-items:center;min-height:460px}
+.qart svg{width:64%;height:64%}
+.qart img{width:100%;height:100%;object-fit:cover}
+.qinfo{padding:44px 40px 36px}
+.qinfo h2{font-size:2.1rem;color:var(--navy);line-height:1.1}
+.qinfo .qcat{color:var(--sub);font-size:14px;margin:4px 0 12px}
+.qinfo .pr{font-size:20px;font-weight:700;margin-bottom:14px}
+.qinfo .pr s{color:var(--sub);font-weight:400;font-size:16px;margin-left:8px}
+.qinfo .pr .sale{color:var(--sale)}
+.qinfo p.d{color:#3c4a5a;margin:0 0 20px}
+.sizes{display:flex;flex-wrap:wrap;gap:8px}
+.size{min-width:48px;padding:11px 14px;border:1.5px solid var(--line);border-radius:4px;font-weight:600;font-size:14px}
+.size:hover{border-color:var(--navy)}
+.size.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.sizeerr{color:var(--sale);font-size:13.5px;min-height:1.5em;margin:8px 0 4px}
+.qinfo .row{display:flex;gap:10px;margin-top:8px}
+.qinfo .row .btn{flex:1}
+.qcontact{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--sub)}
+.qcontact a{color:var(--blue-deep);font-weight:700;text-decoration:underline}
+
+.cbox{padding:38px 38px 32px;max-width:560px}
+.cbox h2{font-size:2.1rem;color:var(--navy)}
+.cbox .lead{color:var(--sub);margin:8px 0 16px}
+.cbox textarea{width:100%;min-height:170px;border:1.5px solid var(--line);border-radius:6px;padding:14px;font-size:14px;background:var(--mist);resize:vertical}
+.cbox .actions{display:grid;gap:10px;margin-top:16px}
+.cbox .actions .btn{width:100%}
+
+.search{position:fixed;left:0;right:0;top:0;z-index:70;background:#fff;padding:22px 32px;box-shadow:0 20px 40px -20px rgba(13,39,64,.5);transform:translateY(-105%);visibility:hidden;transition:transform .3s,visibility 0s .3s}
+body[data-layer="search"] #searchPanel{transform:none;visibility:visible;transition-delay:0s}
+.search .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:12px;border-bottom:2px solid var(--navy);padding:4px 0}
+.search input{flex:1;border:0;font-size:20px;padding:10px 0;background:none}
+.search input:focus-visible{outline:none}
+.search .hint{max-width:760px;margin:10px auto 0;color:var(--sub);font-size:13.5px}
+
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,16px);z-index:90;background:var(--navy);color:#fff;padding:14px 22px;border-radius:6px;display:flex;gap:18px;align-items:center;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;font-size:14.5px;max-width:94vw;box-shadow:0 14px 34px rgba(0,0,0,.25)}
+.toast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.toast button{color:var(--gold-light);font-weight:700;text-decoration:underline}
+
+/* mobile menu accordion */
+#menuPanel .logo{align-items:flex-start}
+#menuPanel .logo .script{font-size:38px}
+#menuPanel .logo .tag{display:none}
+.macc{flex:1;overflow:auto;margin-top:6px}
+.macc details{border-bottom:1px solid var(--line)}
+.macc summary,.macc .plain{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:10px 4px;font-size:16.5px;font-weight:600;cursor:pointer;width:100%;text-align:left}
+.macc summary::-webkit-details-marker{display:none}
+.macc summary::after{content:'+';font-size:22px;font-weight:400;color:var(--blue)}
+.macc details[open] summary::after{content:'–'}
+.macc details button{display:block;width:100%;text-align:left;padding:8px 18px;font-size:15px;color:var(--sub)}
+.mcontact{padding-top:14px;display:grid;gap:8px}
+.mcontact .btn{padding:11px 8px;font-size:14.5px}
+
+@media (max-width:1100px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .cats{grid-template-columns:repeat(3,1fr);row-gap:30px}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .fgrid .fb{grid-column:1/-1}
+}
+@media (max-width:900px){
+  .ibtn.phone{width:44px;padding:0}
+  .ibtn.phone .pn{display:none}
+  #shop{scroll-margin-top:60px}
+  nav.main{display:none}
+  .burger{display:grid}
+  .hrow{padding:8px 14px 6px}
+  .logo .script{font-size:42px}
+  .logo .tag{font-size:15px}
+  header.compact .logo .script{font-size:34px}
+  .wrap{padding:0 20px}
+  .section{padding:64px 0}
+  .band .wrap{grid-template-columns:1fr}
+  .vgrid{grid-template-columns:1fr}
+  .qgrid{grid-template-columns:1fr}
+  .qart{min-height:0;aspect-ratio:4/4}
+  .qinfo{padding:26px 24px 28px}
+}
+@media (max-width:700px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:26px 14px}
+  .cats{grid-template-columns:repeat(2,1fr)}
+  .hero{padding:48px 16px}
+  .hero-card{padding:46px 26px 42px}
+  .hero-card::before{inset:7px}
+  .hright .fbico{display:none}
+}
+@media (max-width:480px){
+  .hrow{padding:8px 6px 6px}
+  .hleft,.hright{gap:0}
+  .ibtn,.ibtn.phone{width:40px;height:40px}
+  .logo .script{font-size:36px}
+  .logo .tag{font-size:13.5px}
+  header.compact .logo .script{font-size:30px}
+}
+@media (max-width:460px){
+  .fgrid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<a class="promo" href="https://facebook.com/cameosboutique" target="_blank" rel="noopener">Follow us on Facebook for new arrivals &amp; sales <svg class="ic" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+
+<header id="head">
+  <div class="hrow">
+    <div class="hleft">
+      <button class="ibtn burger" id="menuBtn" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <button class="ibtn" id="searchBtn" aria-label="Search"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg></button>
+    </div>
+    <a href="#top" class="logo" aria-label="Cameo's Boutique and Home Decor — home">
+      <span class="l1"><span class="script">Cameo's</span></span>
+      <span class="tag">Boutique &amp; Home Decor</span>
+    </a>
+    <div class="hright">
+      <a class="ibtn phone" href="tel:+12562757155" aria-label="Call Cameo's Boutique at (256) 275-7155"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5c0 8 7 15 15 15l2-4-5-2-2 2c-2-1-4-3-5-5l2-2-2-5z"/></svg><span class="pn">(256) 275-7155</span></a>
+      <a class="ibtn fbico" href="https://facebook.com/cameosboutique" target="_blank" rel="noopener" aria-label="Cameo's Boutique on Facebook"><svg class="ic" viewBox="0 0 24 24"><path d="M15 8h2V5h-2c-2 0-3.5 1.5-3.5 3.5V11H9v3h2.5v6h3v-6H17l.5-3h-3V9c0-.6.4-1 1-1z" fill="currentColor" stroke="none"/></svg></a>
+      <button class="ibtn" id="bagBtn" aria-label="Open shopping bag"><svg class="ic" viewBox="0 0 24 24"><path d="M5 8h14l1 13H4z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="badge" id="bagCount" hidden>0</span></button>
+    </div>
+  </div>
+  <nav class="main" id="mainNav" aria-label="Shop"></nav>
+</header>
+
+<main id="top">
+<section class="hero" id="hero">
+  <div class="hero-card">
+    <div class="kick">Welcome to Cameo's</div>
+    <h1>Pretty finds for you &amp; your home</h1>
+    <p>Women's clothing, accessories and home decor — handpicked and shared with love.</p>
+    <div class="ctas">
+      <button class="btn navy" data-go="new">Shop New Arrivals</button>
+      <a class="btn outline" href="tel:+12562757155">Call (256) 275-7155</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="shead"><h2>Shop by Category</h2>
+      <span class="rule"></span></div>
+    <div class="cats" id="catGrid"></div>
+  </div>
+</section>
+
+<section class="section shop" id="shop">
+  <div class="wrap">
+    <div class="shead"><h2 id="shopTitle">Shop the Collection</h2>
+      <span class="rule"></span>
+      <p id="shopSub">Every piece is handpicked. See something you love? Add it to your bag, or call or message us to hold your size.</p></div>
+    <div class="toolbar">
+      <div class="count" id="shopCount"></div>
+      <label><span class="sr" style="position:absolute;left:-9999px">Sort</span>
+        <select class="sortsel" id="sort" aria-label="Sort products">
+          <option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name: A–Z</option>
+        </select></label>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="section band">
+  <div class="wrap">
+    <div class="band-art" id="bandArt" aria-hidden="true"></div>
+    <div>
+      <h2>Home Decor, too.</h2>
+      <p>Candles, pillows, vases and little finishing touches — the pieces that make a house feel like home. Stop in or shop online.</p>
+      <button class="btn primary" data-go="cat:Home Decor">Shop Home Decor</button>
+    </div>
+  </div>
+</section>
+
+<section class="section visit" id="visit">
+  <div class="wrap">
+    <span class="rule"></span>
+    <h2>Come say hello.</h2>
+    <p class="lead">The easiest way to shop with us is the old-fashioned way — call, message us on Facebook, or stop by the shop. We'll hold your size and let you know when new pieces arrive.</p>
+    <div class="vgrid">
+      <div class="vcard"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5c0 8 7 15 15 15l2-4-5-2-2 2c-2-1-4-3-5-5l2-2-2-5z"/></svg><h3>Call or text</h3><span class="v">Talk to a real person</span><span class="s">Call for store hours</span><a class="vbtn" href="tel:+12562757155">Call (256) 275-7155</a></div>
+      <div class="vcard"><svg class="ic" viewBox="0 0 24 24"><path d="M15 8h2V5h-2c-2 0-3.5 1.5-3.5 3.5V11H9v3h2.5v6h3v-6H17l.5-3h-3V9c0-.6.4-1 1-1z" fill="currentColor" stroke="none"/></svg><h3>Facebook</h3><a class="v" href="https://facebook.com/cameosboutique" target="_blank" rel="noopener">/cameosboutique</a><span class="s">New arrivals posted often</span><a class="vbtn" href="https://facebook.com/cameosboutique" target="_blank" rel="noopener">Message us</a></div>
+      <div class="vcard"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-7-5.4-7-11a7 7 0 0 1 14 0c0 5.6-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg><h3>Visit the shop</h3><a class="v" href="https://www.google.com/maps/search/?api=1&query=1551+Florence+Blvd+Florence+AL" target="_blank" rel="noopener">1551 Florence Blvd</a><span class="s">Florence, Alabama</span><a class="vbtn" href="https://www.google.com/maps/search/?api=1&query=1551+Florence+Blvd+Florence+AL" target="_blank" rel="noopener">Get directions</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fb">
+        <a href="#top" class="logo" aria-label="Cameo's Boutique and Home Decor — home">
+          <span class="l1"><span class="script">Cameo's</span></span>
+          <span class="tag">Boutique &amp; Home Decor</span>
+        </a>
+        <p class="about">Women's clothing, accessories and home decor — handpicked and shared with love.</p>
+      </div>
+      <div class="fcol"><h4>Shop</h4><button data-go="new">New Arrivals</button><button data-go="cat:Tops">Tops</button><button data-go="cat:Dresses">Dresses</button><button data-go="cat:Home Decor">Home Decor</button><button data-go="sale">Clearance</button></div>
+      <div class="fcol"><h4>Cameo's</h4><a href="#visit">Visit &amp; Contact</a><a href="tel:+12562757155">(256) 275-7155</a><a href="https://www.google.com/maps/search/?api=1&query=1551+Florence+Blvd+Florence+AL" target="_blank" rel="noopener">1551 Florence Blvd, Florence, AL</a><a href="https://facebook.com/cameosboutique" target="_blank" rel="noopener">Facebook</a></div>
+      <div class="fcol"><h4>Customer care</h4><a href="tel:+12562757155">Questions? (256) 275-7155</a><a href="https://facebook.com/cameosboutique" target="_blank" rel="noopener">Message us</a></div>
+    </div>
+    <div class="fbottom"><span>© 2026 Cameo's Boutique &amp; Home Decor. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+
+<aside class="panel l" id="menuPanel" aria-label="Menu" inert>
+  <div class="ph"><a href="#top" class="logo" data-closelayer><span class="l1"><span class="script">Cameo's</span></span></a><button class="xbtn" data-close aria-label="Close menu"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="macc" id="mAcc"></div>
+  <div class="mcontact">
+    <a class="btn outline" href="tel:+12562757155">Call (256) 275-7155</a>
+    <a class="btn outline" href="https://facebook.com/cameosboutique" target="_blank" rel="noopener">Message us on Facebook</a>
+  </div>
+</aside>
+
+<aside class="panel r" id="bagPanel" aria-label="Shopping bag" inert>
+  <div class="ph"><h2>Your Bag</h2><button class="xbtn" data-close aria-label="Close bag"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <ul id="bagList"></ul>
+  <div class="sub-row"><span>Subtotal</span><span id="bagTotal">$0</span></div>
+  <p class="tiny">Shipping and taxes confirmed when we finalize your order.</p>
+  <button class="btn primary" id="checkoutBtn" style="width:100%">Checkout</button>
+</aside>
+
+<div class="modal" id="quickModal" role="dialog" aria-modal="true" aria-labelledby="qName" inert>
+  <div class="mbox">
+    <button class="xbtn mclose" data-close aria-label="Close"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div class="qgrid"><div class="qart" id="qArt"></div><div class="qinfo" id="qInfo"></div></div>
+  </div>
+</div>
+
+<div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="coTitle" inert>
+  <div class="mbox cbox">
+    <button class="xbtn mclose" data-close aria-label="Close"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h2 id="coTitle">Almost there!</h2>
+    <p class="lead">We finalize every order personally — confirming sizes, shipping and your total, then taking payment by phone or a secure link. Send us your bag and we'll take it from here.</p>
+    <textarea id="orderText" readonly aria-label="Your order details"></textarea>
+    <div class="actions">
+      <a class="btn primary" href="tel:+12562757155">Call (256) 275-7155 to place your order</a>
+      <a class="btn outline" id="fbOrder" href="https://facebook.com/cameosboutique" target="_blank" rel="noopener">Message us on Facebook</a>
+      <button class="btn outline" id="copyOrder">Copy order details</button>
+    </div>
+  </div>
+</div>
+
+<div class="search" id="searchPanel" role="search" inert>
+  <div class="in"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg><input id="q" type="search" placeholder="Search dresses, tops, candles…" aria-label="Search the shop" autocomplete="off"><button class="xbtn" data-close aria-label="Close search"><svg class="ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <p class="hint" id="searchHint">Start typing — results appear in the shop below.</p>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/*
+  MAKING IT YOURS
+  - Phone & Facebook: search "+12562757155" / "(256) 275-7155" and "facebook.com/cameosboutique" and replace with yours.
+  - Address & hours: edit the "Visit the shop" card near the bottom.
+  - Inventory: the shop shows empty picture frames until you add pieces to PRODUCTS below (see the example there).
+    Portrait 4:5 photos look best.
+  - Optional photos: HERO_IMG (behind the welcome panel), BAND_IMG (Home Decor section), CAT_IMG (category circles).
+  - Checkout: the bag collects an order and sends the customer to call or message you. To take payment online,
+    connect Shopify / Stripe Checkout / Square Online in placeholder function startCheckout().
+*/
+const PHONE_TEL = '+12562757155', FB_URL = 'https://facebook.com/cameosboutique';
+const KEY = 'cameos-boutique:v2';
+const HERO_IMG = '';   // e.g. 'images/hero.jpg'
+const BAND_IMG = '';   // photo for the Home Decor section
+const CAT_IMG = {};    // e.g. {'Tops':'images/tops.jpg','Dresses':'images/dresses.jpg'}
+
+/* ---------- catalog ---------- */
+const NAV = {
+  'Tops':['Blouses','Sweaters & Cardigans'],
+  'Bottoms':['Denim','Skirts'],
+  'Dresses':['Casual','Dressy'],
+  'Accessories':['Jewelry','Bags'],
+  'Home Decor':['Candles','Pillows','Vases & Florals']
+};
+const COLLECTIONS = [['tag:fall','Fall Favorites'],['tag:blue','Blue & White'],['gift','Gifts Under $30']];
+/*
+  ADD YOUR INVENTORY HERE — one line per piece. The empty picture frames on the site fill in automatically.
+  Example:
+  {id:'p1', name:'Paisley Peasant Blouse', cat:'Tops', sub:'Blouses', price:48, isNew:true, tags:['fall'], img:'images/paisley-blouse.jpg', desc:'A flowy, feminine blouse...'},
+  Categories: Tops, Bottoms, Dresses, Accessories, Home Decor (edit NAV above to change them).
+  Add was:68 for a sale price, isNew:true for New Arrivals, tags:['fall'] / ['blue'] for Collections.
+*/
+const PRODUCTS = [];
+
+/* ---------- state ---------- */
+const $ = id => document.getElementById(id);
+const fmt = n => '$' + (Math.round(n * 100) / 100).toFixed(n % 1 ? 2 : 0);
+const prod = id => PRODUCTS.find(p => p.id === id);
+const sizesFor = p => p.sizes || (['Tops','Bottoms','Dresses'].includes(p.cat) ? ['XS','S','M','L','XL'] : null);
+let view = {kind:'all'}, sort = 'featured', query = '', bag = {}, quick = null, lastFocus = null, toastTimer;
+try { const d = JSON.parse(localStorage.getItem(KEY) || '{}'); Object.entries(d.bag || {}).forEach(([k,q]) => { if(prod(k.split('|')[0]) && q > 0) bag[k] = q; }); } catch(e) {}
+const persist = () => { try { localStorage.setItem(KEY, JSON.stringify({bag})); } catch(e) {} };
+
+const art = p => p.img ? `<img src="${p.img}" alt="${p.name}" loading="lazy">` : '';
+const CHEV = '<svg class="ic chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>';
+
+/* ---------- static builds ---------- */
+$('mainNav').innerHTML =
+  `<div class="ni"><button data-go="new">New Arrivals</button></div>` +
+  `<div class="ni"><button>Collections ${CHEV}</button><div class="dd">${COLLECTIONS.map(([k,l]) => `<button data-go="${k}">${l}</button>`).join('')}</div></div>` +
+  Object.entries(NAV).map(([cat,subs]) => subs.length
+    ? `<div class="ni" data-cat="${cat}"><button data-go="cat:${cat}">${cat} ${CHEV}</button><div class="dd"><button data-go="cat:${cat}">All ${cat}</button>${subs.map(s => `<button data-go="cat:${cat}|${s}">${s}</button>`).join('')}</div></div>`
+    : `<div class="ni" data-cat="${cat}"><button data-go="cat:${cat}">${cat}</button></div>`).join('') +
+  `<div class="ni"><button data-go="sale">Clearance</button></div>`;
+
+$('mAcc').innerHTML =
+  `<button class="plain" data-go="new">New Arrivals</button>` +
+  `<details><summary>Collections</summary>${COLLECTIONS.map(([k,l]) => `<button data-go="${k}">${l}</button>`).join('')}</details>` +
+  Object.entries(NAV).map(([cat,subs]) => subs.length
+    ? `<details><summary>${cat}</summary><button data-go="cat:${cat}">All ${cat}</button>${subs.map(s => `<button data-go="cat:${cat}|${s}">${s}</button>`).join('')}</details>`
+    : `<button class="plain" data-go="cat:${cat}">${cat}</button>`).join('') +
+  `<button class="plain" data-go="sale">Clearance</button>`;
+
+$('catGrid').innerHTML = Object.keys(NAV).map(c => `<button class="cat" data-go="cat:${c}"><span class="ring">${CAT_IMG[c] ? `<img src="${CAT_IMG[c]}" alt="">` : ''}</span><span>${c}</span></button>`).join('');
+
+if(HERO_IMG){ const h = $('hero'); h.classList.add('photo'); h.style.backgroundImage = `url("${HERO_IMG}")`; }
+if(BAND_IMG) $('bandArt').innerHTML = `<img src="${BAND_IMG}" alt="">`;
+
+/* ---------- shop view ---------- */
+function titleFor(v){
+  if(query) return [`Results for “${query}”`, 'Showing matching pieces from the whole shop.'];
+  switch(v.kind){
+    case 'new': return ['New Arrivals','The latest pieces to land in the shop.'];
+    case 'sale': return ['Clearance','Marked-down favorites while they last.'];
+    case 'gift': return ['Gifts Under $30','Sweet little finds for someone special (or yourself).'];
+    case 'tag': return [v.tag === 'fall' ? 'Fall Favorites' : 'Blue & White', v.tag === 'fall' ? 'Cozy layers and pretty pieces for the season.' : 'Our favorite blues, pretty whites and crisp combinations.'];
+    case 'cat': return [v.sub ? `${v.cat} · ${v.sub}` : v.cat, 'Handpicked pieces, added often.'];
+    default: return ['Shop the Collection','Every piece is handpicked. See something you love? Add it to your bag, or call or message us to hold your size.'];
+  }
+}
+function matches(p){
+  if(query){ const q = query.toLowerCase(); return (p.name + ' ' + p.cat + ' ' + p.sub).toLowerCase().includes(q); }
+  switch(view.kind){
+    case 'new': return p.isNew;
+    case 'sale': return !!p.was;
+    case 'gift': return p.price <= 30;
+    case 'tag': return p.tags.includes(view.tag);
+    case 'cat': return p.cat === view.cat && (!view.sub || p.sub === view.sub);
+    default: return true;
+  }
+}
+function card(p){
+  return `<article class="card">
+    <div class="media"><button class="art" data-open="${p.id}" aria-label="View ${p.name}">${art(p)}</button>
+      <div class="chips">${p.isNew ? '<span class="chip">New</span>' : ''}${p.was ? '<span class="chip sale">Sale</span>' : ''}</div></div>
+    <h3>${p.name}</h3><div class="sub">${p.cat}${p.sub ? ' · ' + p.sub : ''}</div>
+    <div class="pr"><span class="now ${p.was ? 'sale' : ''}">${fmt(p.price)}</span>${p.was ? `<s>${fmt(p.was)}</s>` : ''}</div>
+    <button class="add" data-add="${p.id}">Add to Bag</button></article>`;
+}
+const MIN_SLOTS = 8;
+const blankCard = () => '<article class="card blank" aria-hidden="true"><div class="media"></div><div class="phline m"></div><div class="phline s"></div></article>';
+function renderShop(){
+  const none = PRODUCTS.length === 0;
+  const [t, s] = titleFor(view);
+  $('shopTitle').textContent = t;
+  $('shopSub').textContent = none && !query ? 'New arrivals are on their way. Call or message us on Facebook to see what just came in.' : s;
+  const list = PRODUCTS.filter(matches);
+  if(sort === 'low') list.sort((a,b) => a.price - b.price);
+  else if(sort === 'high') list.sort((a,b) => b.price - a.price);
+  else if(sort === 'name') list.sort((a,b) => a.name.localeCompare(b.name));
+  let html = list.map(card).join('');
+  if(none) html += blankCard().repeat(MIN_SLOTS);
+  else if(!list.length) html = '<p class="empty">Nothing here yet — try another search or category, or call us and we\u2019ll help you find it.</p>';
+  else if(view.kind === 'all' && !query && list.length < MIN_SLOTS) html += blankCard().repeat(MIN_SLOTS - list.length);
+  $('grid').innerHTML = html;
+  const filtered = query || view.kind !== 'all';
+  $('shopCount').innerHTML = none ? 'New pieces arriving soon' : `${list.length} ${list.length === 1 ? 'piece' : 'pieces'}${filtered ? ' <button data-go="all">Show everything</button>' : ''}`;
+  $('sort').closest('label').hidden = none;
+  document.querySelectorAll('.ni[data-cat]').forEach(n => n.classList.toggle('on', view.kind === 'cat' && n.dataset.cat === view.cat));
+}
+function go(spec, scroll = true){
+  query = ''; $('q').value = '';
+  if(spec === 'all') view = {kind:'all'};
+  else if(spec === 'new' || spec === 'sale' || spec === 'gift') view = {kind:spec};
+  else if(spec.startsWith('tag:')) view = {kind:'tag', tag:spec.slice(4)};
+  else if(spec.startsWith('cat:')){ const [cat, sub] = spec.slice(4).split('|'); view = {kind:'cat', cat, sub:sub || ''}; }
+  renderShop(); setLayer(null, true);
+  if(scroll) setTimeout(() => $('shop').scrollIntoView({behavior:'smooth'}), 60);
+  if(document.activeElement && document.activeElement.blur) document.activeElement.blur();
+}
+
+/* ---------- bag ---------- */
+const bagLines = () => Object.entries(bag).map(([k,q]) => { const [id,size] = k.split('|'); return {k,q,size,p:prod(id)}; });
+const bagSub = () => bagLines().reduce((s,l) => s + l.p.price * l.q, 0);
+function renderBag(){
+  const lines = bagLines(), sub = bagSub();
+  $('bagList').innerHTML = lines.length ? lines.map(l => `<li>
+      <div class="bthumb">${art(l.p)}</div>
+      <div class="binfo"><div class="n">${l.p.name}</div><div class="v">${l.size ? 'Size ' + l.size : l.p.cat}</div>
+        <div class="qty"><button class="qb" data-dec="${l.k}" aria-label="Decrease quantity">−</button><span aria-live="polite">${l.q}</span><button class="qb" data-inc="${l.k}" aria-label="Increase quantity">+</button><button class="rm" data-rm="${l.k}">Remove</button></div></div>
+      <div class="bprice">${fmt(l.p.price * l.q)}</div></li>`).join('') : '<li class="bempty">Your bag is empty — go find something pretty.</li>';
+  $('bagTotal').textContent = fmt(sub);
+  const count = lines.reduce((s,l) => s + l.q, 0);
+  $('bagCount').textContent = count; $('bagCount').hidden = !count;
+  $('checkoutBtn').disabled = !lines.length;
+  persist();
+}
+function addToBag(id, size){
+  const k = id + '|' + (size || ''); bag[k] = (bag[k] || 0) + 1; renderBag();
+  toast(`${prod(id).name} added to your bag`, true);
+}
+
+/* ---------- layers (drawers / modals / search) ---------- */
+const LAYERS = {bag:'bagPanel', menu:'menuPanel', quick:'quickModal', checkout:'checkoutModal', search:'searchPanel'};
+function setLayer(name, silent){
+  const cur = document.body.dataset.layer;
+  if(name){
+    if(!cur) lastFocus = document.activeElement;
+    document.body.dataset.layer = name; $('toast').classList.remove('show');
+  } else { delete document.body.dataset.layer; }
+  Object.entries(LAYERS).forEach(([k,id]) => { $(id).inert = k !== name; });
+  if(name){ setTimeout(() => { const el = $(LAYERS[name]); const f = name === 'search' ? $('q') : el.querySelector('[data-close]'); if(f) f.focus(); }, 80); }
+  else if(!silent && lastFocus && lastFocus.focus){ lastFocus.focus(); lastFocus = null; }
+}
+function toast(msg, withBag){
+  const t = $('toast'); t.innerHTML = `<span>${msg}</span>${withBag ? '<button data-layer-open="bag">View bag</button>' : ''}`;
+  t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 3600);
+}
+
+/* quick view */
+function openQuick(id){
+  const p = prod(id), sizes = sizesFor(p);
+  quick = {id, size: null, err:false};
+  $('qArt').innerHTML = art(p); renderQuick(); setLayer('quick');
+}
+function renderQuick(){
+  const p = prod(quick.id), sizes = sizesFor(p);
+  $('qInfo').innerHTML = `<h2 id="qName">${p.name}</h2><div class="qcat">${p.cat}${p.sub ? ' · ' + p.sub : ''}</div>
+    <div class="pr"><span class="${p.was ? 'sale' : ''}">${fmt(p.price)}</span>${p.was ? `<s>${fmt(p.was)}</s>` : ''}</div>
+    <p class="d">${p.desc}</p>
+    ${sizes ? `<div class="sizes" role="radiogroup" aria-label="Size">${sizes.map(s => `<button class="size ${quick.size === s ? 'on' : ''}" data-size="${s}" role="radio" aria-checked="${quick.size === s}">${s}</button>`).join('')}</div><div class="sizeerr" role="alert">${quick.err ? 'Please choose a size.' : ''}</div>` : '<div class="sizeerr"></div>'}
+    <div class="row"><button class="btn primary" data-qadd>Add to Bag</button></div>
+    <div class="qcontact">Questions about this piece? <a href="tel:${PHONE_TEL}">Call (256) 275-7155</a> or <a href="${FB_URL}" target="_blank" rel="noopener">message us on Facebook</a>.</div>`;
+}
+function quickAdd(){
+  const p = prod(quick.id), sizes = sizesFor(p);
+  if(sizes && !quick.size){ quick.err = true; renderQuick(); return; }
+  const size = quick.size; setLayer(null, true); addToBag(p.id, size);
+}
+
+/* checkout (no payments connected: hand the order to the shop) */
+function orderSummary(){
+  const lines = bagLines();
+  return `Hi Cameo's! I'd like to place an order:\n\n` + lines.map(l => `• ${l.p.name}${l.size ? ' (Size ' + l.size + ')' : ''} × ${l.q} — ${fmt(l.p.price * l.q)}`).join('\n') + `\n\nSubtotal: ${fmt(bagSub())}\n\nName:\nPhone:\nShipping address (or pickup):`;
+}
+function startCheckout(){
+  if(!bagLines().length) return;
+  $('orderText').value = orderSummary(); setLayer('checkout');
+}
+async function copyOrder(){
+  const ta = $('orderText'); ta.focus(); ta.select();
+  try { await navigator.clipboard.writeText(ta.value); toast('Order details copied — paste them into your message'); }
+  catch(e){ try { document.execCommand('copy'); toast('Order details copied — paste them into your message'); } catch(_){ toast('Select the text above and copy it'); } }
+}
+
+/* ---------- events ---------- */
+document.addEventListener('click', e => {
+  const t = e.target.closest('button, a'); if(!t) return;
+  const d = t.dataset;
+  if(d.go !== undefined){ e.preventDefault(); go(d.go); }
+  else if(d.open) openQuick(d.open);
+  else if(d.add){ const p = prod(d.add); sizesFor(p) ? openQuick(d.add) : addToBag(d.add, ''); }
+  else if(d.size){ quick.size = d.size; quick.err = false; renderQuick(); }
+  else if(d.qadd !== undefined) quickAdd();
+  else if(d.inc){ bag[d.inc]++; renderBag(); }
+  else if(d.dec){ if(--bag[d.dec] <= 0) delete bag[d.dec]; renderBag(); }
+  else if(d.rm){ delete bag[d.rm]; renderBag(); }
+  else if(d.layerOpen) setLayer(d.layerOpen);
+  else if(d.close !== undefined) setLayer(null);
+  else if(d.closelayer !== undefined) setLayer(null, true);
+});
+$('scrim').addEventListener('click', () => setLayer(null));
+$('quickModal').addEventListener('click', e => { if(e.target === $('quickModal')) setLayer(null); });
+$('checkoutModal').addEventListener('click', e => { if(e.target === $('checkoutModal')) setLayer(null); });
+$('menuBtn').onclick = () => setLayer('menu');
+$('bagBtn').onclick = () => setLayer('bag');
+$('searchBtn').onclick = () => setLayer('search');
+$('checkoutBtn').onclick = startCheckout;
+$('copyOrder').onclick = copyOrder;
+$('fbOrder').addEventListener('click', () => { copyOrder(); });
+$('sort').onchange = e => { sort = e.target.value; renderShop(); };
+$('q').addEventListener('input', e => {
+  query = e.target.value.trim(); renderShop();
+  const n = query ? PRODUCTS.filter(matches).length : PRODUCTS.length;
+  $('searchHint').textContent = !PRODUCTS.length ? 'New pieces are arriving soon — check back or call us.' : query ? `${n} ${n === 1 ? 'result' : 'results'} — press Enter to jump to them.` : 'Start typing — results appear in the shop below.';
+});
+$('q').addEventListener('keydown', e => { if(e.key === 'Enter'){ setLayer(null, true); $('shop').scrollIntoView({behavior:'smooth'}); } });
+document.addEventListener('keydown', e => { if(e.key === 'Escape' && document.body.dataset.layer) setLayer(null); });
+
+/* compact header on scroll */
+let tick = false;
+window.addEventListener('scroll', () => {
+  if(tick) return; tick = true;
+  requestAnimationFrame(() => { $('head').classList.toggle('compact', window.scrollY > 140); tick = false; });
+}, {passive:true});
+
+/* ---------- start ---------- */
+renderShop(); renderBag(); setLayer(null, true);
+</script>
+</body>
+</html>
